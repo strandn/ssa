@@ -17,8 +17,8 @@ class ViewController: UIViewController, UgiInventoryDelegate {
     func updateUI(){
         let inventory: UgiInventory? = Ugi.singleton().activeInventory
         if (inventory?.tags.count != 0) {
-            //let firstTag = Ugi.singleton().activeInventory.tags[0].epc.toString()
-            displayTagLabel.text = "Found \(inventory!.tags.count) Tag(s) Nearby"
+            //displayTagLabel.text = "Found \(inventory!.tags.count) Tag(s) Nearby"
+            displayTagLabel.text = inventory!.tags.first!.epc.toString()
         }
         else {
             displayTagLabel.text = "No Tags Nearby"
