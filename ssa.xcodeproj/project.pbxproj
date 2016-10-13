@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F1191811DAC92D200410CFC /* UGrokItApiResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9F1191801DAC92D200410CFC /* UGrokItApiResources.bundle */; };
+		9F1191821DAC92D200410CFC /* UGrokItApiResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9F1191801DAC92D200410CFC /* UGrokItApiResources.bundle */; };
+		9F1191831DAC92D200410CFC /* UGrokItApiResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9F1191801DAC92D200410CFC /* UGrokItApiResources.bundle */; };
+		9F1191851DAC92E900410CFC /* libUGrokItApi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F1191841DAC92E900410CFC /* libUGrokItApi.a */; };
+		9F1191861DAC92E900410CFC /* libUGrokItApi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F1191841DAC92E900410CFC /* libUGrokItApi.a */; };
+		9F1191871DAC92E900410CFC /* libUGrokItApi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F1191841DAC92E900410CFC /* libUGrokItApi.a */; };
+		9F1191881DAC939700410CFC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F11917E1DAC8F1200410CFC /* libz.tbd */; };
 		9FB8C8371DAA912C00AC6A57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8C8361DAA912C00AC6A57 /* AppDelegate.swift */; };
 		9FB8C8391DAA912C00AC6A57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB8C8381DAA912C00AC6A57 /* ViewController.swift */; };
 		9FB8C83C1DAA912C00AC6A57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FB8C83A1DAA912C00AC6A57 /* Main.storyboard */; };
@@ -34,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9F11917E1DAC8F1200410CFC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		9F1191801DAC92D200410CFC /* UGrokItApiResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = UGrokItApiResources.bundle; path = ../UGrokItApiResources.bundle; sourceTree = "<group>"; };
+		9F1191841DAC92E900410CFC /* libUGrokItApi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUGrokItApi.a; path = ../libUGrokItApi.a; sourceTree = "<group>"; };
 		9FB8C8331DAA912C00AC6A57 /* ssa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ssa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FB8C8361DAA912C00AC6A57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FB8C8381DAA912C00AC6A57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F1191851DAC92E900410CFC /* libUGrokItApi.a in Frameworks */,
+				9F1191881DAC939700410CFC /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F1191861DAC92E900410CFC /* libUGrokItApi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,19 +81,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F1191871DAC92E900410CFC /* libUGrokItApi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F11917D1DAC8F1200410CFC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F11917E1DAC8F1200410CFC /* libz.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9FB8C82A1DAA912C00AC6A57 = {
 			isa = PBXGroup;
 			children = (
+				9F1191841DAC92E900410CFC /* libUGrokItApi.a */,
+				9F1191801DAC92D200410CFC /* UGrokItApiResources.bundle */,
 				9FB8C8351DAA912C00AC6A57 /* ssa */,
 				9FB8C84A1DAA912C00AC6A57 /* ssaTests */,
 				9FB8C8551DAA912C00AC6A57 /* ssaUITests */,
 				9FB8C8341DAA912C00AC6A57 /* Products */,
+				9F11917D1DAC8F1200410CFC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -193,6 +218,7 @@
 				TargetAttributes = {
 					9FB8C8321DAA912C00AC6A57 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = ZRSPS86XZA;
 						ProvisioningStyle = Automatic;
 					};
 					9FB8C8461DAA912C00AC6A57 = {
@@ -232,6 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F1191811DAC92D200410CFC /* UGrokItApiResources.bundle in Resources */,
 				9FB8C8411DAA912C00AC6A57 /* LaunchScreen.storyboard in Resources */,
 				9FB8C83E1DAA912C00AC6A57 /* Assets.xcassets in Resources */,
 				9FB8C83C1DAA912C00AC6A57 /* Main.storyboard in Resources */,
@@ -242,6 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F1191821DAC92D200410CFC /* UGrokItApiResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +277,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F1191831DAC92D200410CFC /* UGrokItApiResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,11 +441,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZRSPS86XZA;
 				INFOPLIST_FILE = ssa/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/..";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eecs481.ssa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = ../include/UgiSwiftBridgingHeader.h;
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "../include/**";
 			};
 			name = Debug;
 		};
@@ -424,11 +459,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZRSPS86XZA;
 				INFOPLIST_FILE = ssa/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/..";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eecs481.ssa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = ../include/UgiSwiftBridgingHeader.h;
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "../include/**";
 			};
 			name = Release;
 		};
@@ -505,6 +546,7 @@
 				9FB8C85D1DAA912C00AC6A57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9FB8C85E1DAA912C00AC6A57 /* Build configuration list for PBXNativeTarget "ssaTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +555,7 @@
 				9FB8C8601DAA912C00AC6A57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9FB8C8611DAA912C00AC6A57 /* Build configuration list for PBXNativeTarget "ssaUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +564,7 @@
 				9FB8C8631DAA912C00AC6A57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
