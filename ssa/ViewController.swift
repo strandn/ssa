@@ -34,8 +34,10 @@ class ViewController: UIViewController, UgiInventoryDelegate {
     }
     
     @IBAction func readStopButton(_ sender: UIButton) {
-        Ugi.singleton().activeInventory.stop {
-            //self.updateUI()
+        if (Ugi.singleton().activeInventory != nil && Ugi.singleton().activeInventory.isScanning){
+            Ugi.singleton().activeInventory.stop {
+                self.displayTagLabel.text = "Stopped"
+            }
         }
     }
     
