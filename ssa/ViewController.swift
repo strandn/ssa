@@ -33,6 +33,7 @@ class ViewController: UIViewController, UgiInventoryDelegate {
                 //self.updateUI()
                 self.displayTagLabel.text = "STOP"
             }
+            sender.setTitle("STOPPED", for: .normal)
             buttonIsPressed = false
             
         } else{
@@ -40,7 +41,7 @@ class ViewController: UIViewController, UgiInventoryDelegate {
                 self,
                 with: UgiRfidConfiguration.config(withInventoryType: UgiInventoryTypes.UGI_INVENTORY_TYPE_LOCATE_DISTANCE))
             self.updateUI()
-            
+            sender.setTitle("SCANNING", for: .normal)
             buttonIsPressed = true
         }
     }
