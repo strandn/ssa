@@ -25,6 +25,28 @@ class ViewController: UIViewController, UgiInventoryDelegate {
         }
     }
     
+    var buttonIsPressed = false
+    
+    @IBAction func readButton(_ sender: UIButton) {
+        if buttonIsPressed {
+            Ugi.singleton().activeInventory.stop {
+                //self.updateUI()
+                self.displayTagLabel.text = "STOP"
+            }
+            sender.setTitle("STOPPED", for: .normal)
+            buttonIsPressed = false
+            
+        } else{
+            Ugi.singleton().startInventory(
+                self,
+                with: UgiRfidConfiguration.config(withInventoryType: UgiInventoryTypes.UGI_INVENTORY_TYPE_LOCATE_DISTANCE))
+            self.updateUI()
+            sender.setTitle("SCANNING", for: .normal)
+            buttonIsPressed = true
+        }
+    }
+    
+    
     //MARK:Actions
     @IBAction func readStartButton(_ sender: UIButton) {
         Ugi.singleton().startInventory(
@@ -41,6 +63,8 @@ class ViewController: UIViewController, UgiInventoryDelegate {
         }
     }
     
+    
+    /**/
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
