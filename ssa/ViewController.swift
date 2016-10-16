@@ -10,10 +10,12 @@ import UIKit
 
 class ViewController: UIViewController, UgiInventoryDelegate {
 
-    //MARK:Properties
+    //Variables
     @IBOutlet weak var displayTagLabel: UILabel!
-    //var tagToDetailString: [UgiTag : NSMutableString] = [:]
+    let db = SQLiteDB.sharedInstance
+    var buttonIsPressed = false
     
+    //Update UI State
     func updateUI(){
         let inventory: UgiInventory? = Ugi.singleton().activeInventory
         if (inventory?.tags.count != 0) {
@@ -25,8 +27,7 @@ class ViewController: UIViewController, UgiInventoryDelegate {
         }
     }
     
-    var buttonIsPressed = false
-    
+    //Control for Large Read Button
     @IBAction func readButton(_ sender: UIButton) {
         if buttonIsPressed {
             Ugi.singleton().activeInventory.stop {
@@ -47,7 +48,7 @@ class ViewController: UIViewController, UgiInventoryDelegate {
     }
     
     
-    //MARK:Actions
+    // Control for Start Button
     @IBAction func readStartButton(_ sender: UIButton) {
         Ugi.singleton().startInventory(
             self,
@@ -55,6 +56,7 @@ class ViewController: UIViewController, UgiInventoryDelegate {
         self.updateUI()
     }
     
+    // Control for Stop Button
     @IBAction func readStopButton(_ sender: UIButton) {
         if (Ugi.singleton().activeInventory != nil && Ugi.singleton().activeInventory.isScanning){
             Ugi.singleton().activeInventory.stop {
