@@ -19,8 +19,12 @@ class ViewController: UIViewController, UgiInventoryDelegate {
     func updateUI(){
         let inventory: UgiInventory? = Ugi.singleton().activeInventory
         if (inventory?.tags.count != 0) {
-            //displayTagLabel.text = "Found \(inventory!.tags.count) Tag(s) Nearby"
-            displayTagLabel.text = inventory!.tags.first!.epc.toString()
+            let rfid = "abc123"//inventory!.tags.first!.epc.toString()
+            let data = db.query(sql: "SELECT description FROM tags WHERE rfid=?", parameters:[rfid])
+            let row = data[0]
+            if let description = row["description"]{
+                displayTagLabel.text = description as? String
+            }
         }
         else {
             displayTagLabel.text = "No Tags Nearby"
