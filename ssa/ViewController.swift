@@ -19,7 +19,7 @@ class ViewController: UIViewController, UgiInventoryDelegate {
     func updateUI(){
         let inventory: UgiInventory? = Ugi.singleton().activeInventory
         if (inventory?.tags.count != 0) {
-            let rfid = "abc123"//inventory!.tags.first!.epc.toString()
+            let rfid = inventory!.tags.first!.epc.toString()
             let data = db.query(sql: "SELECT description FROM tags WHERE rfid=?", parameters:[rfid])
             let row = data[0]
             if let description = row["description"]{
@@ -57,7 +57,10 @@ class ViewController: UIViewController, UgiInventoryDelegate {
         Ugi.singleton().startInventory(
             self,
             with: UgiRfidConfiguration.config(withInventoryType: UgiInventoryTypes.UGI_INVENTORY_TYPE_LOCATE_DISTANCE))
-        self.updateUI()
+        let inventory: UgiInventory? = Ugi.singleton().activeInventory
+        if (inventory?.tags.count != 0){
+            self.updateUI()
+        }
     }
     
     // Control for Stop Button
