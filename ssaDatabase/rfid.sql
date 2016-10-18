@@ -2,11 +2,11 @@ pragma foreign_keys = on;
 
 create table locations (
 	lid binary(36),
-	street varchar(100),
-	city varchar(100),
-	state_province_region varchar(100),
-	zip varchar(100),
-	country varchar(100),
+	street varchar(100) not null,
+	city varchar(100) not null,
+	state_province_region varchar(100) not null,
+	zip varchar(100) not null,
+	country varchar(100) not null,
 	primary key(lid),
 	unique(street, city, state_province_region, zip, country)
 );
@@ -30,7 +30,7 @@ create table tags (
 	foreign key(location, description) references descriptions(lid, did)
 );
 
---price must be null if type is not item (tid=0)
+--if type is not item (tid=0) price must be null
 --if type is item (tid=1) price may or may not be null
 create trigger insert_trigger before insert on tags
 begin
